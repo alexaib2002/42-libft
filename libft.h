@@ -207,5 +207,19 @@ void	*ft_memcmp(const void *s1, const void *s2, int n);
  * @return Pointer to 'dst' memory area.
  */
 void	*ft_memmove(void *dst, const void *src, int n);
+/**
+ * @brief Allocates memory for an array of 'count' elements, each of them
+ * 'size' bytes long, and initializes all its bits to zero.
+ * @param count Number of elements to be allocated
+ * @param size Size of each element
+ * @return Pointer to the allocated memory, or NULL if the allocation failed.
+ */
+void	*ft_calloc(int count, int size);
+/**
+ * @brief Duplicate a string, allocating memory for it with malloc.
+ * @param s1 String to be duplicated
+ * @return Pointer to the duplicated string, or NULL if the allocation failed.
+ */
+char	*ft_strdup(const char *s1);
 
 #endif
