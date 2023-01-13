@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/13 17:36:19 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/13 19:16:02 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,15 @@ int		ft_isprint(int c);
  * @param s Given string
  * @return Total length of the string
  */
-int		ft_strlen(char *s);
+int		ft_strlen(const char *s);
 /**
  * @brief Copies up to (size - 1) a NUL-terminated source string, into a given
- *  destination, NUL-terminating the result
+ *  destination, NUL-terminating the result.
  * @param dst Pointer to destination
  * @param src Source string
  * @param size Byte number about to copy, including the NUL terminator
- * @return Total length of the string created on dst
+ * @return Total length of the string attempted to create on dst. This value
+ * should be validated against the real size of dst, for detecting truncation
  */
 int		ft_strlcpy(char *dst, const char *src, int size);
 /**
