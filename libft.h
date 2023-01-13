@@ -6,16 +6,16 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/12 13:25:18 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/13 17:36:19 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/**
+/*******************
 * Checker functions
-*/
+*****************/
 
 /**
  * @brief Checks if given character is an alphabetic character
@@ -49,9 +49,10 @@ int		ft_isascii(int c);
  */
 int		ft_isprint(int c);
 
-/**
+/******************
 * String functions
-*/
+****************/
+
 /**
  * @brief Calculates the length of a given string, excluding the NUL character
  * @param s Given string
@@ -143,9 +144,9 @@ int		ft_toupper(int c);
  */
 int		ft_tolower(int c);
 
-/**
+/******************
 * Memory functions
-*/
+****************/
 
 /**
  * @brief Erases data in the 'n' bytes of memory, starting at the location
