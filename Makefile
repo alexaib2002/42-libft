@@ -6,14 +6,17 @@
 #    By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by alexaib           #+#    #+#              #
-#    Updated: 2023/01/14 19:24:43 by alexaib          ###   ########.fr        #
+#    Updated: 2023/01/14 19:50:41 by alexaib          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define target library and sources
 TARGET = libft.a
 DBG_TARGET = libft_debug.a
+DBG_BIN = libft_debug.bin
 SRCS = ft_isalnum.c  ft_isascii.c  ft_isprint.c  ft_strlcat.c ft_strlen.c ft_isalpha.c  ft_isdigit.c  ft_strchr.c   ft_strlcpy.c
+DBG_SRCS = $(SRCS)
+DBG_SRCS += libft_tester.c
 
 # Define compiler and its flags
 # Release
@@ -29,6 +32,7 @@ DBG_OBJS = $(SRCS:.c=_debug.o)
 all: $(TARGET) $(DBG_TARGET)
 
 debug: $(DBG_TARGET)
+	$(CC) $(DBG_CFLAGS) -o $(DBG_BIN) $(DBG_SRCS)
 
 $(TARGET): $(OBJS)
 	ar rcs $(TARGET) $(OBJS)
@@ -43,4 +47,4 @@ $(DBG_TARGET): $(DBG_OBJS)
 	$(CC) $(DBG_CFLAGS) -o $@ -c $<
 
 clean:
-	rm -f $(TARGET) $(OBJS) $(DBG_TARGET) $(DBG_OBJS)
+	rm -f $(TARGET) $(OBJS) $(DBG_TARGET) $(DBG_OBJS) $(DBG_BIN)

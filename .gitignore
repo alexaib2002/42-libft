@@ -1,4 +1,6 @@
 # Standard gitignore file
-libtests.c
 *.gch
 *.out
+*.o
+*.a
+*.bin
