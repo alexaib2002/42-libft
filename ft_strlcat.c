@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:32:58 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/14 19:02:44 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/14 19:32:48 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	ft_strlcat(char *dst, const char *src, int size)
 		*c_dst++ = *c_src++;
 		size_left -= 1;
 	}
-	*c_dst = 0;
+	if (size_left == 0)
+		*c_dst = 0;
 	return (dst_size + ft_strlen(src));
 }
