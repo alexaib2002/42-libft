@@ -6,7 +6,7 @@
 #    By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by alexaib           #+#    #+#              #
-#    Updated: 2023/01/14 19:50:41 by alexaib          ###   ########.fr        #
+#    Updated: 2023/01/14 20:12:42 by alexaib          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 TARGET = libft.a
 DBG_TARGET = libft_debug.a
 DBG_BIN = libft_debug.bin
-SRCS = ft_isalnum.c  ft_isascii.c  ft_isprint.c  ft_strlcat.c ft_strlen.c ft_isalpha.c  ft_isdigit.c  ft_strchr.c   ft_strlcpy.c
+SRCS = $(wildcard ft_*.c)
 DBG_SRCS = $(SRCS)
 DBG_SRCS += libft_tester.c
 
