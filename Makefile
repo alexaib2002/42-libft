@@ -6,7 +6,7 @@
 #    By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by alexaib           #+#    #+#              #
-#    Updated: 2023/01/14 20:12:42 by alexaib          ###   ########.fr        #
+#    Updated: 2023/01/14 20:43:07 by alexaib          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ TARGET = libft.a
 DBG_TARGET = libft_debug.a
 DBG_BIN = libft_debug.bin
 SRCS = $(wildcard ft_*.c)
-DBG_SRCS = $(SRCS)
-DBG_SRCS += libft_tester.c
+DBG_SRCS = $(SRCS) libft_tester.c
 
 # Define compiler and its flags
 # Release
