@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/13 19:16:02 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/14 11:49:19 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int		ft_strlcpy(char *dst, const char *src, int size);
 /**
  * @brief Appends the NUL-terminated string src to the end of NUL-terminated
  * string dst. At most, (size - strlen(dst) - 1) bytes will be appended,
- * NUL-terminating the result afterwards
+ * NUL-terminating the result afterwards.
  * @param dst NUL-terminated destination string
  * @param src NUL-terminated source string
  * @param size Byte number of the source string
