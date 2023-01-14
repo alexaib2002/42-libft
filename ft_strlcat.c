@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:32:58 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/14 18:18:05 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/14 19:02:44 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	ft_strlcat(char *dst, const char *src, int size)
 		return (ft_strlen(src) + size);
 
 	while (*c_dst)
-		*c_dst++;
+		*c_dst += 1;
 
 	while (*c_src && size_left)
 	{
 		*c_dst++ = *c_src++;
-		size_left--;
+		size_left -= 1;
 	}
 	*c_dst = 0;
 	return (dst_size + ft_strlen(src));
