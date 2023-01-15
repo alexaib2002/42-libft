@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/14 20:39:23 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/15 10:54:54 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 # ifndef CAPS_PAD
 #  define CAPS_PAD 'a' - 'A'
+# endif
+# ifndef NUMS_PAD
+#  define NUMS_PAD '0'
 # endif
 
 /*******************
