@@ -6,12 +6,13 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/15 10:54:54 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/16 17:43:04 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stddef.h>
 # ifndef CAPS_PAD
 #  define CAPS_PAD 'a' - 'A'
 # endif
