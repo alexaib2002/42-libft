@@ -1,0 +1,11 @@
+{
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "${workspaceFolder}/42-libft",
+			"binaryPath": "${workspaceFolder}/42-libft/libtest.out",
+			"binaryArgs": []
+		}
+	]
+}
