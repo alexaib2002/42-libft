@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/16 17:43:04 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/18 18:26:04 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,12 +185,12 @@ void	ft_bzero(void *s, int n);
  */
 void	*ft_memset(void *s, int c, int n);
 /**
- * @brief Searches memory location 's' for a given character 'c',
+ * @brief Searches memory location 's' for the first ocurrence of byte 'c',
  * up to 'n' bytes.
  * @param s Memory area to be searched
- * @param c Given character
+ * @param c Given byte
  * @param n Number of bytes about to be searched.
- * @return Pointer to the matching byte, or NULL if the character was not
+ * @return Pointer to the matching byte, or NULL if the byte was not
  * found.
  */
 void	*ft_memchr(const void *s, int c, int n);
