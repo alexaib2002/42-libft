@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 21:27:14 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/14 19:55:52 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/16 18:10:33 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == c)
-			return (s);
+			return ((char *) s);
 		s++;
 	}
 	return (0);

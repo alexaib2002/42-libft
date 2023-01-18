@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:07:34 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/16 18:01:45 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/16 18:11:10 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	*ft_memset(void *s, int c, int n)
 		*(unsigned char *)s = c;
 		(unsigned char *)s++;
 	}
-	return (ptr);
+	return ((void *) ptr);
 }

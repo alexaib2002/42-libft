@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:38:37 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/16 18:01:38 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/16 18:06:04 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, int n)
 {
-	ft_memset(s, NULL, n);
+	ft_memset(s, 0, n);
 }
