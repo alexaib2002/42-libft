@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:56:06 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/18 15:50:40 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/18 18:34:45 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	strp = nptr;
 	c = 0;
 	m = 1;
-	while (*strp++)
+	while (*strp)
 	{
 		n *= 10;
 		if (*strp == '-' && m != -1)
@@ -35,6 +35,7 @@ int	ft_atoi(const char *nptr)
 			return (0);
 		c = *strp - (NUMS_PAD);
 		n += c;
+		strp++;
 	}
 	return (n * m);
 }
