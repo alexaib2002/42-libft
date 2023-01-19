@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:59:26 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/18 20:09:51 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:57:41 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ void	*ft_memcpy(void *dst, const void *src, int n)
 	const void	*odst;
 
 	odst = dst;
-	while (n)
+	while (n--)
 	{
 		*(unsigned char *) dst++ = *(unsigned char *) src++;
-		n--;
 	}
 	return ((void *) odst);
 }

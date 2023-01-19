@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:56:06 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/18 18:34:45 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:52:48 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 int	ft_atoi(const char *nptr)
 {
-	const char	*strp;
-	char		c;
-	int			n;
-	int			m;
+	char			c;
+	char			s;
+	unsigned int	n;
 
-	n = 0;
-	strp = nptr;
 	c = 0;
-	m = 1;
-	while (*strp)
+	s = 1;
+	n = 0;
+	while (*nptr == ' ')
+		nptr++;
+	while (*nptr)
 	{
-		n *= 10;
-		if (*strp == '-' && m != -1)
+		if (*nptr == '-' && s != -1)
+			s = -1;
+		else if (!ft_isdigit(*nptr))
+			break ;
+		else
 		{
-			m = -1;
-			continue ;
+			n *= 10;
+			c = *nptr - (NUMS_PAD);
+			n += c;
 		}
-		else if (!ft_isdigit(*strp))
-			return (0);
-		c = *strp - (NUMS_PAD);
-		n += c;
-		strp++;
+		nptr++;
 	}
-	return (n * m);
+	return (n * s);
 }
