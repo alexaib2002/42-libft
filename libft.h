@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/18 18:26:04 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/19 10:58:48 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,7 +214,7 @@ void	*ft_memcpy(void *dst, const void *src, int n);
  * @return Integer resulting from the difference between the pair of bytes
  * differing in s1 and s2.
  */
-void	*ft_memcmp(const void *s1, const void *s2, int n);
+int		ft_memcmp(const void *s1, const void *s2, int n);
 /**
  * @brief Copies 'n' bytes from memory area pointed by 'src' to memory area
  * 'dst'. Memory areas can overlap; initially the copy goes into a
