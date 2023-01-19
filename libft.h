@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/19 16:28:13 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/19 18:42:30 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -285,7 +285,7 @@ void	*ft_memmove(void *dst, const void *src, int n);
  * @param size Size of each element
  * @return Pointer to the allocated memory, or NULL if the allocation failed.
  */
-void	*ft_calloc(int count, int size);
+void	*ft_calloc(size_t count, size_t size);
 
 /***************************
 * File descriptor functions
