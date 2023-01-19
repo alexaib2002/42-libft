@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by alexaib           #+#    #+#             */
-/*   Updated: 2023/01/19 10:58:48 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:28:13 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,12 @@ int		ft_strncmp(const char *s1, const char *s2, int n);
  */
 int		ft_atoi(const char *nptr);
 /**
+ * @brief
+ * @param n
+ * @return
+ */
+char	ft_itoa(int n);
+/**
  * @brief Converts a valid lower-case letter referenced by the char to its
  * corresponding upper-case one.
  * @param c Given character
@@ -163,6 +169,50 @@ int		ft_toupper(int c);
  * @return The converted letter, or 'c' if the conversion was not possible
  */
 int		ft_tolower(int c);
+/**
+ * @brief Duplicate a string, allocating memory for it with malloc.
+ * @param s1 String to be duplicated
+ * @return Pointer to the duplicated string, or NULL if the allocation failed.
+ */
+char	*ft_strdup(const char *s1);
+/**
+ * @brief
+ * @param s
+ * @param start
+ * @param len
+ * @return
+ */
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+/**
+ * @brief
+ * @param s1
+ * @param s2
+ * @return
+ */
+char	*ft_strjoin(const char *s1, const char *s2);
+/**
+ * @brief
+ * @param s1
+ * @param set
+ * @return
+ */
+char	*ft_strtrim(const char *s1, const char *set);
+/**
+ * @brief
+ * @param s
+ * @param c
+ * @return
+ */
+char	*ft_split(const char *s, char *c);
+/**
+ * @brief
+ * @param s
+ * @param f
+ * @return
+ */
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+char	*ft_striteri(char *s, void (*f)(unsigned int, char*));
+
 
 /******************
 * Memory functions
@@ -236,11 +286,34 @@ void	*ft_memmove(void *dst, const void *src, int n);
  * @return Pointer to the allocated memory, or NULL if the allocation failed.
  */
 void	*ft_calloc(int count, int size);
+
+/***************************
+* File descriptor functions
+*************************/
+
 /**
- * @brief Duplicate a string, allocating memory for it with malloc.
- * @param s1 String to be duplicated
- * @return Pointer to the duplicated string, or NULL if the allocation failed.
+ * @brief
+ * @param c
+ * @param fd
  */
-char	*ft_strdup(const char *s1);
+void	ft_putchar_fd(char c, int fd);
+/**
+ * @brief
+ * @param s
+ * @param fd
+ */
+void	ft_putstr_fd(char *s, int fd);
+/**
+ * @brief
+ * @param s
+ * @param fd
+ */
+void	ft_putendl_fd(char *s, int fd);
+/**
+ * @brief
+ * @param n
+ * @param fd
+ */
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
