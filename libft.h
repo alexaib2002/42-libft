@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 14:14:05 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:17:51 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,10 +187,11 @@ char	*ft_strdup(const char *s1);
  */
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 /**
- * @brief
- * @param s1
- * @param s2
- * @return
+ * @brief Concatenates two strings 's1' and 's2' into a new one allocated with
+ * malloc.
+ * @param s1 First string
+ * @param s2 Last string
+ * @return Pointer to the new string. NULL when memory cannot be allocated.
  */
 char	*ft_strjoin(const char *s1, const char *s2);
 /**
