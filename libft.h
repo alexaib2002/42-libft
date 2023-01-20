@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:14:05 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,11 +150,14 @@ int		ft_strncmp(const char *s1, const char *s2, int n);
  */
 int		ft_atoi(const char *nptr);
 /**
- * @brief
- * @param n
- * @return
+ * @brief Generates a string from a given signed integer. The resulting string
+ * is generated with malloc.
+ * @param n Given signed integer
+ * @return Resulting string, or NULL if malloc fails. If some error happens
+ * during conversion, the resulting string will be the number up until that
+ * point (can be an empty string).
  */
-char	ft_itoa(int n);
+char	*ft_itoa(int n);
 /**
  * @brief Converts a valid lower-case letter referenced by the char to its
  * corresponding upper-case one.
