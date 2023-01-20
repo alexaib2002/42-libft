@@ -6,16 +6,18 @@
 #    By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by aaibar-h          #+#    #+#              #
-#    Updated: 2023/01/20 13:22:34 by aaibar-h         ###   ########.fr        #
+#    Updated: 2023/01/20 17:05:14 by aaibar-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define target library and sources
 TARGET = libft.a
+SRCS_BONUS = $(wildcard ft_*_bonus.c)
+SRCS = $(filter-out $(SRCS_BONUS), $(wildcard ft_*.c))
+# Define debug target library and sources
 DBG_TARGET = libft_debug.a
 DBG_BIN = libft_debug.bin
-SRCS = $(wildcard ft_*.c)
-DBG_SRCS = $(SRCS) libft_tester.c
+DBG_SRCS = $(SRCS) $(SRCS_BONUS) libft_tester.c
 
 # Define compiler and its flags
 # Release
@@ -33,7 +35,7 @@ DBG_OBJS = $(SRCS:.c=_debug.o)
 .PHONY: all debug clean fclean re
 
 # Compile all
-all: $(TARGET) $(DBG_TARGET)
+all: $(TARGET) debug
 
 # Compile code with debug symbols and executable binary
 debug: $(DBG_TARGET)
@@ -62,6 +64,6 @@ $(DBG_TARGET): $(DBG_OBJS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
-	
+
 %_debug.o: %.c
 	@$(CC) $(DBG_CFLAGS) -o $@ -c $<
