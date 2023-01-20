@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 16:17:51 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:22:55 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,11 +179,14 @@ int		ft_tolower(int c);
  */
 char	*ft_strdup(const char *s1);
 /**
- * @brief
- * @param s
- * @param start
- * @param len
- * @return
+ * @brief Returns a new string created from the original string 's' with an
+ * offset delimited by 'start' with 'len' characters. If 'len' is greater than
+ * the size of 's', the resulting substring will be ended by the NUL terminator
+ * of 's'.
+ * @param s String for creating the substring
+ * @param start Substring offset
+ * @param len Length of substring
+ * @return Pointer to the new string. NULL when memory cannot be allocated.
  */
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 /**
