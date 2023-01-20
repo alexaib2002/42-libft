@@ -213,7 +213,6 @@ char	*ft_split(const char *s, char *c);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	*ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-
 /******************
 * Memory functions
 ****************/
@@ -280,7 +279,8 @@ int		ft_memcmp(const void *s1, const void *s2, int n);
 void	*ft_memmove(void *dst, const void *src, int n);
 /**
  * @brief Allocates memory for an array of 'count' elements, each of them
- * 'size' bytes long, and initializes all its bits to zero.
+ * 'size' bytes long, and initializes all its bits to zero. Checks for integers
+ * overflows with given parameters and zero values
  * @param count Number of elements to be allocated
  * @param size Size of each element
  * @return Pointer to the allocated memory, or NULL if the allocation failed.
