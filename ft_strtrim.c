@@ -6,14 +6,14 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:54:49 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/21 12:23:21 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/21 12:57:53 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-unsigned char	ft_isinset(const char c, const char *set)
+static unsigned char	ft_isinset(const char c, const char *set)
 {
 	unsigned char	has;
 
@@ -24,7 +24,7 @@ unsigned char	ft_isinset(const char c, const char *set)
 	return (has);
 }
 
-int	ft_trimlen(const char *s1, const char *set)
+static int	ft_trimlen(const char *s1, const char *set)
 {
 	int		len;
 

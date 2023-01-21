@@ -6,14 +6,14 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:51:35 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 14:44:02 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/21 12:58:22 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_numdigs(int n)
+static int	ft_numdigs(int n)
 {
 	int	d;
 
@@ -28,7 +28,7 @@ int	ft_numdigs(int n)
 	return (d);
 }
 
-char	*ft_istralloc(int n)
+static char	*ft_istralloc(int n)
 {
 	int		digs;
 	int		exdigs;
