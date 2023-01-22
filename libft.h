@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/21 11:54:33 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:09:34 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,12 +213,14 @@ char	*ft_strjoin(const char *s1, const char *s2);
  */
 char	*ft_strtrim(const char *s1, const char *set);
 /**
- * @brief
- * @param s
- * @param c
- * @return
+ * @brief Creates an array of strings by splitting a string 's' with a
+ * delimiter character 'c'. The resulting strings will be allocated in memory.
+ * @param s String to split
+ * @param c Delimiter character
+ * @return Pointer to the array, with a NULL pointer at its end.
+ * NULL when memory cannot be allocated.
  */
-char	*ft_split(const char *s, char *c);
+char	**ft_split(const char *s, char *c);
 /**
  * @brief
  * @param s
@@ -226,6 +228,12 @@ char	*ft_split(const char *s, char *c);
  * @return
  */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+/**
+ * @brief
+ * @param s
+ * @param f
+ * @return
+ */
 char	*ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 /******************
