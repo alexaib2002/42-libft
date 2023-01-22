@@ -67,6 +67,13 @@ int		ft_isupper(int c);
  * @return Value greater than zero if the condition was met, else zero
  */
 int		ft_islower(int c);
+/**
+ * @brief Checks if given character is contained in a set of characters
+ * @param c Given character
+ * @param set Pointer to the set of characters to probe
+ * @return Value greater than zero if the condition was met, else zero
+ */
+int		ft_isinset(const char c, const char *set);
 
 /******************
 * String functions
