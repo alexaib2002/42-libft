@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/22 12:09:34 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:18:29 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,12 +229,14 @@ char	**ft_split(const char *s, char *c);
  */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 /**
- * @brief
- * @param s
- * @param f
- * @return
+ * @brief Applies the function 'f' to every character of string 's', giving as
+ * parameters the index of the character and the character itself, which can be
+ * modified by 'f'. Thus, this function modifies the string indicated by 's'
+ * @param s String about to be iterated
+ * @param f Function to apply for every character
+ * @return None
  */
-char	*ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 /******************
 * Memory functions
