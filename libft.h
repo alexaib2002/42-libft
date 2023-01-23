@@ -222,10 +222,13 @@ char	*ft_strtrim(const char *s1, const char *set);
  */
 char	**ft_split(const char *s, char *c);
 /**
- * @brief
- * @param s
- * @param f
- * @return
+ * @brief Applies the function 'f' to every character of string 's', giving as
+ * parameters the index of the character and the character itself. Returns a new
+ * string resulting from the modifications applied by 'f'.
+ * @param s String about to be iterated
+ * @param f Fucntion to apply for every character
+ * @return The resulting string after calling 'f'. NULL when memory cannot be
+ * allocated.
  */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 /**
