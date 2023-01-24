@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/23 13:41:37 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 09:04:01 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -320,27 +320,28 @@ void	*ft_calloc(size_t count, size_t size);
 *************************/
 
 /**
- * @brief
- * @param c
- * @param fd
+ * @brief Sends the character 'c' into a file descriptor 'fd'.
+ * @param c Character to send
+ * @param fd File descriptor to be written
  */
 void	ft_putchar_fd(char c, int fd);
 /**
- * @brief
- * @param s
- * @param fd
+ * @brief Sends the string 's' into a file descriptor 'fd'.
+ * @param s String to send
+ * @param fd File descriptor to be written
  */
 void	ft_putstr_fd(char *s, int fd);
 /**
- * @brief
- * @param s
- * @param fd
+ * @brief Sends the string 's' into a file descriptor 'fd', followed by a line
+ * break.
+ * @param s String to send
+ * @param fd File descriptor to be written
  */
 void	ft_putendl_fd(char *s, int fd);
 /**
- * @brief
- * @param n
- * @param fd
+ * @brief Sends the number 'n' into a file descriptor 'fd'.
+ * @param n Number to send
+ * @param fd File descriptor to be written
  */
 void	ft_putnbr_fd(int n, int fd);
 
