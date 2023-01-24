@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/24 18:46:10 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 19:04:28 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,25 @@
 # ifndef NUMS_PAD
 #  define NUMS_PAD '0'
 # endif
+
+/*******************
+* Type declarations
+*****************/
+
+/**
+ * @struct s_list
+ * @brief Represents a node on a list. Will have a reference to its content and
+ * a reference to the next item, the latter being NULL when the end is reached.
+ * @var s_list::content
+ * References the data stored in this node
+ * @var s_list::content
+ * References the next node, will be NULL on the last node
+ */
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 /*******************
 * Checker functions
