@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:20:05 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/23 12:18:40 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:36:41 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,17 @@
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char	*ptr;
-	char	c;
-	int		i;
-	int		j;
+	char	*str;
+	size_t	i;
 
+	str = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (str == NULL)
+		return (str);
 	i = 0;
-	j = 0;
 	while (s[i])
 	{
-		c = f(i, s[i++]);
-		if (c)
-		{
-			ptr[j] = malloc(sizeof(char));
-			ptr[j++] = c;
-		}
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	ptr[j] = malloc(sizeof(char));
-	ptr[j] = 0;
-	return (ptr);
+	return (str);
 }
