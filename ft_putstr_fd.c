@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:52:24 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/23 13:54:46 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:49:36 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
-		ft_putchar(*(s++), fd);
+		ft_putchar_fd(*(s++), fd);
 }
