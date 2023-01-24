@@ -6,13 +6,13 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:07:34 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:45:21 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, int n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	const void	*ptr;
 

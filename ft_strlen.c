@@ -6,15 +6,15 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:16:34 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:38:25 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

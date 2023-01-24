@@ -6,15 +6,15 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:32:58 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:43:31 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcat(char *dst, const char *src, int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int			dst_size;
+	size_t		dst_size;
 	char		*c_dst;
 	const char	*c_src;
 	int			size_left;

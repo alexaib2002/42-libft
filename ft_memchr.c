@@ -6,13 +6,13 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:05:50 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:45:33 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	while (n--)
 	{

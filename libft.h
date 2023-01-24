@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/24 09:04:01 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:46:10 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		ft_isinset(const char c, const char *set);
  * @param s Given string
  * @return Total length of the string
  */
-int		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 /**
  * @brief Copies up to (size - 1) a NUL-terminated source string, into a given
  *  destination, NUL-terminating the result.
@@ -94,7 +94,7 @@ int		ft_strlen(const char *s);
  * @return Total length of the string attempted to create on dst. This value
  * should be validated against the real size of dst, for detecting truncation
  */
-int		ft_strlcpy(char *dst, const char *src, int size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 /**
  * @brief Appends the NUL-terminated string src to the end of NUL-terminated
  * string dst. At most, (size - strlen(dst) - 1) bytes will be appended,
@@ -106,7 +106,7 @@ int		ft_strlcpy(char *dst, const char *src, int size);
  * traversing size characters without finding the NUL char, size will be
  * considered as the string size, and the dst string won't be NUL-terminated.
  */
-int		ft_strlcat(char *dst, const char *src, int size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 /**
  * @brief Tries to locate the first occurrence of a character in a given string.
  * Note that NUL terminator is considered as part of the string.
@@ -137,7 +137,7 @@ char	*ft_strrchr(const char *s, int c);
  * Big when little is an empty string, or NULL when little is not found on
  * 'big'.
  */
-char	*ft_strnstr(const char *big, const char *little, int len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 /**
  * @brief Compares two strings 's1' and 's2' up to at most 'n' bytes.
  * @param s1 First string
@@ -149,7 +149,7 @@ char	*ft_strnstr(const char *big, const char *little, int len);
  * Note that this implementation will return the arithmetic result of the last
  * compared byte substraction between s1 and s2.
  */
-int		ft_strncmp(const char *s1, const char *s2, int n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 /**
  * @brief Given a string, converts it to an integer.
  * @param nptr pointer to string about to be converted
@@ -251,7 +251,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
  * @param s Memory location about to be erased
  * @param n Byte number to be erased
  */
-void	ft_bzero(void *s, int n);
+void	ft_bzero(void *s, size_t n);
 /**
  * @brief Fills memory referenced by 's' with a constant byte 'c' up to 'n'
  * bytes.
@@ -260,7 +260,7 @@ void	ft_bzero(void *s, int n);
  * @param n Number of bytes to be filled
  * @return Pointer to the filled memory area 's'.
  */
-void	*ft_memset(void *s, int c, int n);
+void	*ft_memset(void *s, int c, size_t n);
 /**
  * @brief Searches memory location 's' for the first ocurrence of byte 'c',
  * up to 'n' bytes.
@@ -270,7 +270,7 @@ void	*ft_memset(void *s, int c, int n);
  * @return Pointer to the matching byte, or NULL if the byte was not
  * found.
  */
-void	*ft_memchr(const void *s, int c, int n);
+void	*ft_memchr(const void *s, int c, size_t n);
 /**
  * @brief Copies the first 'n' bytes from memory area 'src' to memory area
  * 'dest'.
@@ -281,7 +281,7 @@ void	*ft_memchr(const void *s, int c, int n);
  * @param n Number of bytes about to be copied.
  * @return Pointer to 'dst'.
  */
-void	*ft_memcpy(void *dst, const void *src, int n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 /**
  * @brief Compares the first 'n' bytes, interpreted as unsigned char of the
  * memory areas s1 and s2.
@@ -291,7 +291,7 @@ void	*ft_memcpy(void *dst, const void *src, int n);
  * @return Integer resulting from the difference between the pair of bytes
  * differing in s1 and s2.
  */
-int		ft_memcmp(const void *s1, const void *s2, int n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /**
  * @brief Copies 'n' bytes from memory area pointed by 'src' to memory area
  * 'dst'. Memory areas can overlap; initially the copy goes into a
@@ -304,7 +304,7 @@ int		ft_memcmp(const void *s1, const void *s2, int n);
  * @param n Number of bytes about to be moved
  * @return Pointer to 'dst' memory area.
  */
-void	*ft_memmove(void *dst, const void *src, int n);
+void	*ft_memmove(void *dst, const void *src, size_t n);
 /**
  * @brief Allocates memory for an array of 'count' elements, each of them
  * 'size' bytes long, and initializes all its bits to zero. Checks for integers

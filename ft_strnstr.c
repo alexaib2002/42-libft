@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:32:10 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:46:43 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_lrst(const char **optr, const char **little, const char **lptr)
 	*lptr = *little;
 }
 
-char	*ft_strnstr(const char *big, const char *little, int len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	const char	*optr;
 	const char	*bptr;

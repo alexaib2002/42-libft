@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/22 18:18:00 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:21:17 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	ft_splitn(const char *s, char *c)
  * @param c Split sequence
  * @return Last character of the word
  */
-static char	*ft_mksplit(const char *s, char *c)
+static const char	*ft_mksplit(const char *s, char *c)
 {
 	while (*s && !ft_isinset(*s, c))
 		s++;

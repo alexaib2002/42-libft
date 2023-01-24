@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 17:18:35 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 17:37:12 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:51:51 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	if (start > ft_strlen(s))
