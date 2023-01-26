@@ -6,7 +6,7 @@
 #    By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by aaibar-h          #+#    #+#              #
-#    Updated: 2023/01/24 19:10:49 by aaibar-h         ###   ########.fr        #
+#    Updated: 2023/01/26 10:30:17 by aaibar-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,9 @@ debug: $(DBG_TARGET)
 	@$(CC) $(DBG_CFLAGS) -o $(DBG_BIN) $(DBG_SRCS)
 
 # Compile the bonus functions
-bonus: $(TARGET) $(TARGET_BONUS)
+bonus: $(TARGET)
+	@echo "Compiling bonus target"
+	@ar rcs $(TARGET) $(OBJS_BONUS)
 
 # Clean compiled objects
 clean:
@@ -66,10 +68,6 @@ $(TARGET): $(OBJS)
 $(DBG_TARGET): $(DBG_OBJS)
 	@echo "Compiling debug target"
 	@ar rcs $(DBG_TARGET) $(DBG_OBJS)
-
-$(TARGET_BONUS): $(SRCS_BONUS)
-	@echo "Compiling bonus target"
-	@ar rcs $(TARGET_BONUS) $(OBJS_BONUS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
