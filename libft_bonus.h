@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:56:35 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/26 10:19:58 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:11:03 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,6 @@
 t_list	*ft_lstnew(void *content);
 
 /**
- * @brief Adds the 'new' node to the 'lst' list's front.
- * @param lst Pointer to the first node of the list
- * @param new Pointer to a new node about to be appended to the first index
- */
-void	ft_lstadd_front(t_list **lst, t_list *new);
-
-/**
  * @brief Counts the number of nodes of a list.
  * @param lst Pointer to the first node of the list
  * @return List's node count
@@ -46,6 +39,13 @@ int		ft_lstsize(t_list *lst);
  * @return Last node of the list
  */
 t_list	*ft_lstlast(t_list *lst);
+
+/**
+ * @brief Adds the 'new' node to the 'lst' list's front.
+ * @param lst Pointer to the first node of the list
+ * @param new Pointer to a new node about to be appended to the first index
+ */
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 /**
  * @brief Adds the 'new' node to the 'lst' list's end.
