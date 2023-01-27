@@ -6,16 +6,16 @@
 #    By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by aaibar-h          #+#    #+#              #
-#    Updated: 2023/01/27 09:43:26 by aaibar-h         ###   ########.fr        #
+#    Updated: 2023/01/27 22:20:55 by aaibar-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Define target library and sources
-TARGET = libft.a
+NAME = libft.a
 SRCS_BONUS = $(wildcard ft_*_bonus.c)
 SRCS = $(filter-out $(SRCS_BONUS), $(wildcard ft_*.c))
 # Define debug target library and sources
-DBG_TARGET = libft_debug.a
+DBG_NAME = libft_debug.a
 DBG_BIN = libft_debug.bin
 DBG_SRCS = $(SRCS) $(SRCS_BONUS) libft_tester.c
 
@@ -36,16 +36,16 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 .PHONY: all debug bonus clean fclean re
 
 # Compile all
-all: $(TARGET) debug bonus
+all: $(NAME) debug bonus
 
 # Compile code with debug symbols and executable binary
-debug: $(DBG_TARGET)
+debug: $(DBG_NAME)
 	@$(CC) $(DBG_CFLAGS) -o $(DBG_BIN) $(DBG_SRCS)
 
 # Compile the bonus functions
-bonus: $(TARGET) $(OBJS_BONUS)
+bonus: $(NAME) $(OBJS_BONUS)
 	@echo "Compiling bonus target"
-	@ar rcs $(TARGET) $(OBJS_BONUS)
+	@ar rcs $(NAME) $(OBJS_BONUS)
 
 # Clean compiled objects
 clean:
@@ -55,19 +55,19 @@ clean:
 # Clean all
 fclean: clean
 	@echo "Cleaning all"
-	@rm -f $(TARGET) $(DBG_TARGET) $(DBG_BIN)
+	@rm -f $(NAME) $(DBG_NAME) $(DBG_BIN)
 
 # Re-make all, same as calling clean && all
 re: fclean all
 
 # File compiling rules
-$(TARGET): $(OBJS)
+$(NAME): $(OBJS)
 	@echo "Compiling release target"
-	@ar rcs $(TARGET) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
-$(DBG_TARGET): $(DBG_OBJS)
+$(DBG_NAME): $(DBG_OBJS)
 	@echo "Compiling debug target"
-	@ar rcs $(DBG_TARGET) $(DBG_OBJS)
+	@ar rcs $(DBG_NAME) $(DBG_OBJS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
