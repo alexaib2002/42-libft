@@ -6,11 +6,23 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:56:06 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/28 11:38:26 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_movptr(const char **nptr, char *s)
+{
+	while (**nptr == ' ')
+		(*nptr)++;
+	if (**nptr == '+' || **nptr == '-')
+	{
+		if (**nptr == '-' && *s != -1)
+			*s = -1;
+		(*nptr)++;
+	}
+}
 
 int	ft_atoi(const char *nptr)
 {
@@ -21,20 +33,12 @@ int	ft_atoi(const char *nptr)
 	c = 0;
 	s = 1;
 	n = 0;
-	while (*nptr == ' ')
-		nptr++;
-	while (*nptr)
+	ft_movptr(&nptr, &s);
+	while (*nptr && ft_isdigit(*nptr))
 	{
-		if (*nptr == '-' && s != -1)
-			s = -1;
-		else if (!ft_isdigit(*nptr))
-			break ;
-		else
-		{
-			n *= 10;
-			c = *nptr - (NUMS_PAD);
-			n += c;
-		}
+		n *= 10;
+		c = *nptr - (NUMS_PAD);
+		n += c;
 		nptr++;
 	}
 	return (n * s);
