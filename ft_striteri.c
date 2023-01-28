@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:19:27 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/23 12:03:51 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:28:27 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	while (s[i])
-		f(i++, s);
+	{
+		f(i, &(s[i]));
+		i++;
+	}
 }
