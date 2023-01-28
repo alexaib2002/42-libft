@@ -36,7 +36,7 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 .PHONY: all debug bonus clean fclean re
 
 # Compile all
-all: $(NAME) debug bonus
+all: $(NAME) bonus
 
 # Compile code with debug symbols and executable binary
 debug: $(DBG_NAME)
@@ -50,7 +50,7 @@ bonus: $(NAME) $(OBJS_BONUS)
 # Clean compiled objects
 clean:
 	@echo "Cleaning objects"
-	@rm -f $(OBJS) $(DBG_OBJS)
+	@rm -f $(OBJS) $(DBG_OBJS) $(OBJS_BONUS)
 
 # Clean all
 fclean: clean
