@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:33:11 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/24 18:51:25 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:26:49 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	r = 0;
-	while (i < n && r == 0)
-	{
-		r = *s1 - *s2;
-		s1 += 1;
-		s2 += 1;
-		i += 1;
-	}
+	while (i++ < n && r == 0 && !(!*s1 && !*s2))
+		r = ((unsigned char) *(s1++)) - ((unsigned char) *(s2++));
 	return (r);
 }
