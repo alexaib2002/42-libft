@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/26 10:19:38 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 12:14:24 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,5 +363,16 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd File descriptor to be written
  */
 void	ft_putnbr_fd(int n, int fd);
+
+/****************
+* Math functions
+**************/
+
+/**
+ * @brief Returns the absolute value (positive) of a given number 'n'.
+ * @param n Number
+ * @return The absolute value of 'n'.
+ */
+int		ft_abs(int n);
 
 #endif
