@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/29 12:14:24 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 12:42:52 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -371,8 +371,17 @@ void	ft_putnbr_fd(int n, int fd);
 /**
  * @brief Returns the absolute value (positive) of a given number 'n'.
  * @param n Number
- * @return The absolute value of 'n'.
+ * @return Absolute value of 'n'.
  */
 int		ft_abs(int n);
+/**
+ * @brief Given a number 'n', limits its value with a minimum of 'min' and a
+ * maximum of 'max'.
+ * @param min Minimum value of 'n'
+ * @param max Maximum value of 'n'
+ * @param n Number to limit
+ * @return Value of 'n' after clamping its value.
+ */
+int		ft_clamp(int min, int max, int n);
 
 #endif
