@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 09:16:08 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/26 11:48:39 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:50:46 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 
 	node = malloc(sizeof(t_list));
 	if (!node)
-		return (node);
+		return (NULL);
 	node->content = content;
 	node->next = NULL;
 	return (node);

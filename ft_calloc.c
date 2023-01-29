@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:13:17 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 11:57:37 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:47:34 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	*ft_calloc(size_t count, size_t size)
 	if (t > INT_MAX)
 		return (NULL);
 	ptr = malloc(t);
+	if (!ptr)
+		return (NULL);
 	i = 0;
 	while (i < t && ptr)
 		*((unsigned char *)ptr + i++) = 0;

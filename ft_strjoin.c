@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:51:42 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 16:33:08 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:46:32 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int			i;
 
 	str = malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (*s1)
 		str[i++] = *(s1++);

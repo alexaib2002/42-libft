@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:20:05 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/28 18:25:24 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:49:27 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	str = malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (str == NULL)
-		return (str);
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

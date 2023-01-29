@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:51:35 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/29 12:14:59 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:48:21 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_itoa(int n)
 	int				z;
 
 	str = ft_stralloc(n);
+	if (!str)
+		return (NULL);
 	i = 0;
 	z = 1;
 	while (ft_numdigs(z) < ft_numdigs(n))

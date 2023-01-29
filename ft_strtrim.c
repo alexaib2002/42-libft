@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:54:49 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/22 12:07:16 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:49:39 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		i;
 
 	str = malloc(ft_trimlen(s1, set) * sizeof(char));
-	if (str == NULL)
-		return (str);
+	if (!str)
+		return (NULL);
 	while (*s1)
 	{
 		if (!ft_isinset(*s1, set))
