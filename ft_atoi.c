@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:56:06 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/28 11:38:26 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 14:20:32 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_movptr(const char **nptr, char *s)
 {
-	while (**nptr == ' ')
+	while (**nptr && ft_isseparator(**nptr))
 		(*nptr)++;
 	if (**nptr == '+' || **nptr == '-')
 	{
