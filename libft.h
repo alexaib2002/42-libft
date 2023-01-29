@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/29 12:42:52 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 14:14:40 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,12 @@ int		ft_isupper(int c);
  * @return Value greater than zero if the condition was met, else zero
  */
 int		ft_islower(int c);
+/**
+ * @brief Checks if given character is a valid separator
+ * @param c Given character
+ * @return Value greater than zero if the condition was met, else zero
+ */
+int		ft_isseparator(int c);
 /**
  * @brief Checks if given character is contained in a set of characters
  * @param c Given character
