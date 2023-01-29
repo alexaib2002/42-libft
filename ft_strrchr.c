@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:05:53 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:57 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/29 17:17:01 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	f = 0;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char) c)
 			f = (char *) s;
 		s++;
 	}
+	if (*s == (char) c)
+		f = (char *) s;
 	return (f);
 }
