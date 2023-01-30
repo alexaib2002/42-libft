@@ -6,40 +6,29 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:54:49 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/29 13:49:39 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:11:21 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int	ft_trimlen(const char *s1, const char *set)
-{
-	int		len;
-
-	len = 0;
-	while (*s1)
-	{
-		if (!ft_isinset(*(s1++), set))
-			len++;
-	}
-	return (len);
-}
-
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*str;
-	int		i;
+	char	*eptr;
+	int		size;
 
-	str = malloc(ft_trimlen(s1, set) * sizeof(char));
+	eptr = (char *) s1 + ft_strlen(s1) - 1;
+	while (s1 < eptr && ft_isinset(*s1, set))
+		s1++;
+	while (eptr >= s1 && ft_isinset(*eptr, set))
+		eptr--;
+	size = eptr - s1 + 1;
+	str = malloc((size + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	while (*s1)
-	{
-		if (!ft_isinset(*s1, set))
-			str[i++] = *s1;
-		s1++;
-	}
-	str[i] = 0;
+	ft_memcpy(str, s1, size);
+	*(str + size) = 0;
 	return (str);
 }
