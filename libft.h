@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/29 14:14:40 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:59:37 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,7 +231,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 /**
  * @brief Creates a new string based on 's1' without any characters indicated
- * on 'set'.
+ * on 'set' in its front and its back.
  * @param s1 String to be trimmed
  * @param set Characters for trimming
  * @return Pointer to the new string. NULL when memory cannot be allocated.
@@ -245,7 +245,7 @@ char	*ft_strtrim(const char *s1, const char *set);
  * @return Pointer to the array, with a NULL pointer at its end.
  * NULL when memory cannot be allocated.
  */
-char	**ft_split(const char *s, char *c);
+char	**ft_split(const char *s, char c);
 /**
  * @brief Applies the function 'f' to every character of string 's', giving as
  * parameters the index of the character and the character itself. Returns a new
