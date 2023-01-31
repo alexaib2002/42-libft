@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/31 18:05:22 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/31 23:44:03 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,43 @@ static size_t	ft_splitn(const char *trstr, char c)
 	return (n);
 }
 
+/*
+TODO
+*** REMOVE ME LATER ***
+TODO
+Implement new function is_strempty so split may detect when new split is
+required in case range is empty
+
+Check that every split will contain a complete string before calling malloc
+
+strchr(s, 0) == s   // checks if the NUL terminator equals the current pointer
+AKA the pointer is empty!!
+*/
+
 char	**ft_split(const char *s, char c)
 {
 	char	**strarr;
 	char	*next;
-	char	*trstr;
-	char	*c_trstr;
+	char	*c_str;
 	size_t	size;
 	size_t	i;
 
-	trstr = ft_strtrim(s, &c);
-	c_trstr = trstr;
-	size = ft_splitn(trstr, c);
+	s = ft_strtrim(s, &c);
+	c_str = (char *) s;
+	size = ft_splitn(s, c);
 	strarr = malloc((size + 1) * sizeof(char *));
 	if (!strarr)
 		return (NULL);
 	i = 0;
 	while (i < size)
 	{
-		next = ft_strchr(trstr, c);
+		next = ft_strchr(s, c);
 		if (!next)
-			next = ft_strlen(trstr) + (char *) trstr;
-		strarr[i++] = ft_substr(trstr, 0, next - trstr);
-		trstr = next + 1;
+			next = ft_strlen(s) + (char *) s;
+		strarr[i++] = ft_substr(s, 0, next - s);
+		s = next + 1;
 	}
-	free(c_trstr);
+	free(c_str);
 	strarr[i] = NULL;
 	return (strarr);
 }
