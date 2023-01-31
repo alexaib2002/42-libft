@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/30 18:34:27 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:05:22 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,16 @@
  * @param c Delimiter character
  * @return Number of splits required
  */
-static int	ft_splitn(const char *str, char c)
+static size_t	ft_splitn(const char *trstr, char c)
 {
-	int		n;
-	int		i;
-	char	*trstr;
+	size_t	n;
+	size_t	i;
 
 	n = 1;
 	i = 0;
-	trstr = ft_strtrim(str, &c);
 	while (trstr[i])
 		if (trstr[i++] == c)
 			n++;
-	free(trstr);
 	return (n);
 }
 
@@ -41,25 +38,27 @@ char	**ft_split(const char *s, char c)
 {
 	char	**strarr;
 	char	*next;
-	int		size;
-	int		i;
-	int		j;
+	char	*trstr;
+	char	*c_trstr;
+	size_t	size;
+	size_t	i;
 
-	size = ft_splitn(s, c);
-	strarr = malloc(size * sizeof(char *));
+	trstr = ft_strtrim(s, &c);
+	c_trstr = trstr;
+	size = ft_splitn(trstr, c);
+	strarr = malloc((size + 1) * sizeof(char *));
+	if (!strarr)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{
-		j = 0;
-		next = ft_strchr(s, c);
+		next = ft_strchr(trstr, c);
 		if (!next)
-			next = ft_strlen(s) + (char *) s;
-		strarr[i] = malloc((next - s) * sizeof(char));
-		while (s < next)
-			strarr[i][j++] = *(s++);
-		i++;
-		s++;
+			next = ft_strlen(trstr) + (char *) trstr;
+		strarr[i++] = ft_substr(trstr, 0, next - trstr);
+		trstr = next + 1;
 	}
+	free(c_trstr);
 	strarr[i] = NULL;
 	return (strarr);
 }
