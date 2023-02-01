@@ -6,31 +6,18 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:51:35 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/29 13:48:21 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/01 10:53:11 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int	ft_numdigs(int n)
-{
-	int	d;
-
-	d = 1;
-	while (n / 10)
-	{
-		n /= 10;
-		d++;
-	}
-	return (d);
-}
-
 static char	*ft_stralloc(int n)
 {
 	int		strsize;
 
-	strsize = ft_numdigs(n) + 1;
+	strsize = ft_ndigs(n) + 1;
 	if (n < 0)
 		strsize++;
 	return (malloc((strsize) * sizeof(char)));
@@ -47,7 +34,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	i = 0;
 	z = 1;
-	while (ft_numdigs(z) < ft_numdigs(n))
+	while (ft_ndigs(z) < ft_ndigs(n))
 		z *= 10;
 	if (n < 0)
 	{

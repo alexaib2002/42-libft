@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/30 17:59:37 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/01 10:53:15 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -389,5 +389,12 @@ int		ft_abs(int n);
  * @return Value of 'n' after clamping its value.
  */
 int		ft_clamp(int min, int max, int n);
+
+/**
+ * @brief Calculates the number of digits of a given number 'n'.
+ * @param n Number
+ * @return Digits of 'n'.
+ */
+int		ft_ndigs(int n);
 
 #endif
