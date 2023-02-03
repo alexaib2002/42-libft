@@ -33,7 +33,7 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 # Main rules
 # Define PHONY rules
-.PHONY: all debug bonus clean fclean re
+.PHONY: clean fclean re
 
 # Compile all
 all: $(NAME) bonus
