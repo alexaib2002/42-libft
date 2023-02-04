@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:56:35 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/26 12:11:03 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/04 19:06:17 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  * node
  * @return Pointer to the new list. NULL when memory allocation fails.
  */
-t_list	ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
