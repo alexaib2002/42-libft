@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 13:17:24 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/27 13:20:22 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/04 17:55:54 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst->next)
+	while (lst)
 	{
 		f(lst->content);
 		lst = lst->next;
