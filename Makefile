@@ -6,25 +6,32 @@
 #    By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by aaibar-h          #+#    #+#              #
-#    Updated: 2023/01/27 22:20:55 by aaibar-h         ###   ########.fr        #
+#    Updated: 2023/02/05 23:21:45 by aaibar-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Define target library and sources
+# Target library
 NAME = libft.a
+
+# Make directories
+TEST_DIR = .tests
+INCLUDE = .
+
+# Sources
 SRCS_BONUS = $(wildcard ft_*_bonus.c)
 SRCS = $(filter-out $(SRCS_BONUS), $(wildcard ft_*.c))
-# Define debug target library and sources
+# Debug target library and sources
 DBG_NAME = libft_debug.a
 DBG_BIN = libft_debug.bin
-DBG_SRCS = $(SRCS) $(SRCS_BONUS) libft_tester.c
+DBG_TESTERS = $(wildcard $(TEST_DIR)/tt_*.c)
+DBG_SRCS = $(SRCS) $(SRCS_BONUS) $(DBG_TESTERS)
 
-# Define compiler and its flags
+# Compiler and flags
 # Release
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 # Debug
-DBG_CFLAGS = -g -fno-builtin -lbsd
+DBG_CFLAGS = -g -lbsd
 
 # Object files
 OBJS = $(SRCS:.c=.o)
@@ -40,7 +47,7 @@ all: $(NAME) bonus
 
 # Compile code with debug symbols and executable binary
 debug: $(DBG_NAME)
-	@$(CC) $(DBG_CFLAGS) -o $(DBG_BIN) $(DBG_SRCS)
+	@$(CC) $(DBG_CFLAGS) -I $(INCLUDE) -o $(DBG_BIN) $(DBG_SRCS)
 
 # Compile the bonus functions
 bonus: $(NAME) $(OBJS_BONUS)
