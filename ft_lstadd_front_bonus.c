@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 12:03:42 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/04 18:51:36 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:41:06 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst || !*lst || !new)
+	if (!lst)
 		return ;
-	new->next = *lst;
+	if (*lst && new)
+		new->next = *lst;
 	*lst = new;
 }

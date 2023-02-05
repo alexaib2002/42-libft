@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 12:22:23 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/04 18:00:38 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:43:50 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !*lst || !new)
+	if (!lst)
 		return ;
-	ft_lstlast(*lst)->next = new;
+	if (new)
+	{
+		if (*lst)
+			ft_lstlast(*lst)->next = new;
+		else
+			*lst = new;
+	}
 }
