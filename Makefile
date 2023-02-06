@@ -6,7 +6,7 @@
 #    By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by aaibar-h          #+#    #+#              #
-#    Updated: 2023/02/06 18:11:35 by aaibar-h         ###   ########.fr        #
+#    Updated: 2023/02/06 18:34:33 by aaibar-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OBJS_BONUS= $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 # Compile the bonus functions
-bonus: $(NAME) $(OBJS_BONUS)
+bonus: $(NAME)
 	@echo "Compiling bonus target"
 	@make $(NAME) SRCS="$(SRCS) $(SRCS_BONUS)"
 
