@@ -6,12 +6,13 @@
 #    By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by aaibar-h          #+#    #+#              #
-#    Updated: 2023/02/06 18:38:04 by aaibar-h         ###   ########.fr        #
+#    Updated: 2023/02/07 13:32:13 by aaibar-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Target library
 NAME = libft.a
+OUT = $(shell pwd)
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
@@ -51,7 +52,7 @@ re: fclean all
 
 # File compiling rules
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	@ar rcs $(OUT)/$(NAME) $(OBJS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
