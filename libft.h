@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/01 10:53:15 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:33:54 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -396,5 +396,11 @@ int		ft_clamp(int min, int max, int n);
  * @return Digits of 'n'.
  */
 int		ft_ndigs(int n);
+
+/*****************
+* Array functions
+***************/
+
+void	ft_free_arr(void **arr);
 
 #endif

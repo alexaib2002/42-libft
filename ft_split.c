@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/01 22:26:08 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:35:35 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ char	**ft_gensplit(const char *str, char c)
 		if (!next)
 			next = ft_strlen(str) + (char *) str;
 		strarr[i++] = ft_substr(str, 0, next - str);
+		if (!strarr[i - 1])
+		{
+			ft_free_arr((void **) strarr);
+			break ;
+		}
 		str = next;
 		while (*str == c)
 			str++;
@@ -70,6 +75,8 @@ char	**ft_split(const char *s, char c)
 
 	trstr = ft_strtrim(s, &c);
 	strarr = ft_gensplit(trstr, c);
+	if (!strarr)
+		return (NULL);
 	free(trstr);
 	return (strarr);
 }
