@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/07 16:35:35 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/07 22:26:31 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static size_t	ft_splitn(const char *trstr, char c)
 	size_t	n;
 	size_t	i;
 
+	if (*trstr == 0)
+		return (0);
 	n = 1;
 	i = 0;
 	while (trstr[i])
@@ -74,9 +76,11 @@ char	**ft_split(const char *s, char c)
 	char	*trstr;
 
 	trstr = ft_strtrim(s, &c);
+	if (!trstr)
+		return (NULL);
 	strarr = ft_gensplit(trstr, c);
+	free(trstr);
 	if (!strarr)
 		return (NULL);
-	free(trstr);
 	return (strarr);
 }
