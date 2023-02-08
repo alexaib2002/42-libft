@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/08 15:42:39 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/08 15:52:03 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,29 +71,21 @@ static void	ft_fillsplit(char **strarr, const size_t size, const char *str,
 	}
 }
 
-static char	**ft_gensplit(const char *str, char c)
-{
-	char	**strarr;
-	size_t	size;
-
-	size = ft_splitn(str, c);
-	strarr = malloc((size + 1) * sizeof(char *));
-	if (!strarr)
-		return (NULL);
-	strarr[size] = NULL;
-	ft_fillsplit(strarr, size, str, c);
-	return (strarr);
-}
-
 char	**ft_split(const char *s, char c)
 {
 	char	**strarr;
 	char	*trstr;
+	size_t	size;
 
 	trstr = ft_strtrim(s, &c);
 	if (!trstr)
 		return (NULL);
-	strarr = ft_gensplit(trstr, c);
+	size = ft_splitn(trstr, c);
+	strarr = malloc((size + 1) * sizeof(char *));
+	if (!strarr)
+		return (NULL);
+	strarr[size] = NULL;
+	ft_fillsplit(strarr, size, trstr, c);
 	free(trstr);
 	if (!strarr)
 		return (NULL);
