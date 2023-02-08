@@ -6,11 +6,13 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 12:41:35 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/29 13:01:29 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:21:52 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_clamp(int min, int max, int n)
+#include "libft.h"
+
+long	ft_clamp(long min, long max, long n)
 {
 	if (n < min)
 		n = min;

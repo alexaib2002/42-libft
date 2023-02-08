@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/07 13:33:54 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:52:17 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -388,7 +388,17 @@ int		ft_abs(int n);
  * @param n Number to limit
  * @return Value of 'n' after clamping its value.
  */
-int		ft_clamp(int min, int max, int n);
+long	ft_clamp(long min, long max, long n);
+
+/**
+ * @brief Given an unsigned number 'n', limits its value with a minimum of
+ * 'min' and a maximum of 'max'.
+ * @param min Minimum unsigned value of 'n'
+ * @param max Maximum unsigned value of 'n'
+ * @param n Unsigned number to limit
+ * @return Unsigned value of 'n' after clamping its value.
+ */
+size_t	ft_uclamp(size_t min, size_t max, size_t n);
 
 /**
  * @brief Calculates the number of digits of a given number 'n'.
@@ -401,6 +411,10 @@ int		ft_ndigs(int n);
 * Array functions
 ***************/
 
+/**
+ * @brief Frees an array
+ * @param arr
+ */
 void	ft_free_arr(void **arr);
 
 #endif
