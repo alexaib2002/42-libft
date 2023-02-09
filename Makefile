@@ -6,13 +6,13 @@
 #    By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 18:44:01 by aaibar-h          #+#    #+#              #
-#    Updated: 2023/02/07 13:32:13 by aaibar-h         ###   ########.fr        #
+#    Updated: 2023/02/09 10:38:35 by aaibar-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Target library
 NAME = libft.a
-OUT = $(shell pwd)
+OUT = .
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
