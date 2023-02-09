@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 10:32:10 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/01/24 18:46:43 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/09 12:45:55 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	bptr = big;
 	if (ft_strlen(little) == 0)
 		return ((char *) big);
-	while (*bptr && len)
+	while (*bptr && len--)
 	{
+		if (*bptr != *lptr)
+			ft_lrst(&optr, &little, &lptr);
 		if (*bptr == *lptr)
 		{
 			if (!optr)
@@ -45,10 +47,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			if (!*lptr)
 				return ((char *) optr);
 		}
-		else
-			ft_lrst(&optr, &little, &lptr);
 		bptr++;
-		len--;
 	}
 	return (0);
 }
