@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/08 15:52:03 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/19 23:29:53 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,33 @@ static size_t	ft_splitn(const char *trstr, char c)
  * @param c Delimiter character
  * @param size Number of splits
  */
-static void	ft_fillsplit(char **strarr, const size_t size, const char *str,
+
+// FIXME this was created for debugging, remove before commiting changes into main!!
+static int failin = 2;
+char *xft_substr(const char * s, unsigned int start, size_t len)
+{
+	if (!failin)
+		return (NULL);
+	failin--;
+	return (ft_substr(s, start, len));
+}
+
+#define ft_substr(s, start, len)	xft_substr(s, start, len)
+// FIXME end of debug section
+
+static char	**ft_fillsplit(const size_t size, const char *str,
 	const char c)
 {
 	char	*next;
+	char	**strarr;
 	size_t	i;
 
+	strarr = malloc((size + 1) * sizeof(char *));
+	if (!strarr)
+		return (NULL);
+	strarr[size] = NULL;
 	i = 0;
-	while (i < size && *str)
+	while (i < size && *str && strarr)
 	{
 		next = ft_strchr(str, c);
 		if (!next)
@@ -63,29 +82,24 @@ static void	ft_fillsplit(char **strarr, const size_t size, const char *str,
 		if (!strarr[i - 1])
 		{
 			ft_free_arr((void **) strarr);
-			break ;
+			strarr = NULL;
 		}
 		str = next;
 		while (*str == c)
 			str++;
 	}
+	return (strarr);
 }
 
 char	**ft_split(const char *s, char c)
 {
 	char	**strarr;
 	char	*trstr;
-	size_t	size;
 
 	trstr = ft_strtrim(s, &c);
 	if (!trstr)
 		return (NULL);
-	size = ft_splitn(trstr, c);
-	strarr = malloc((size + 1) * sizeof(char *));
-	if (!strarr)
-		return (NULL);
-	strarr[size] = NULL;
-	ft_fillsplit(strarr, size, trstr, c);
+	strarr = ft_fillsplit(ft_splitn(trstr, c), trstr, c);
 	free(trstr);
 	if (!strarr)
 		return (NULL);
