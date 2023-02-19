@@ -6,7 +6,7 @@
 /*   By: alexaib <alexaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:32:58 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/09 23:29:22 by alexaib          ###   ########.fr       */
+/*   Updated: 2023/02/19 12:40:56 by alexaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char			*ptr;
-	size_t			len;
 	const size_t	dlen = ft_strlen(dst);
+	const size_t	slen = ft_strlen(src);
+	size_t			i;
+	char			*ptr;
 
-	len = ft_clamp(0, ft_strlen(src), size - dlen - 1);
+	i = dlen + 1;
+	while (i && size)
+	{
+		i--;
+		size--;
+	}
+	size = ft_uclamp(0, slen, size);
 	ptr = dst + dlen;
-	ft_memcpy(ptr, src, len);
-	*(ptr + len) = 0;
-	if (size > dlen)
-		size = dlen;
-	return (ft_clamp(0,
-			dlen + ft_strlen(src), size + ft_strlen(src)));
+	ft_memcpy(ptr, src, size);
+	*(ptr + size) = 0;
+	if (!i)
+		return (slen + dlen);
+	return (slen + (dlen - i) + 1);
 }
