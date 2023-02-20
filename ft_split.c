@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/08 15:52:03 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/20 18:25:11 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static size_t	ft_splitn(const char *trstr, char c)
  * @param c Delimiter character
  * @param size Number of splits
  */
-static void	ft_fillsplit(char **strarr, const size_t size, const char *str,
+static char	**ft_fillsplit(char **strarr, const size_t size, const char *str,
 	const char c)
 {
 	char	*next;
@@ -63,12 +63,13 @@ static void	ft_fillsplit(char **strarr, const size_t size, const char *str,
 		if (!strarr[i - 1])
 		{
 			ft_free_arr((void **) strarr);
-			break ;
+			return (NULL);
 		}
 		str = next;
 		while (*str == c)
 			str++;
 	}
+	return (strarr);
 }
 
 char	**ft_split(const char *s, char c)
@@ -85,9 +86,8 @@ char	**ft_split(const char *s, char c)
 	if (!strarr)
 		return (NULL);
 	strarr[size] = NULL;
-	ft_fillsplit(strarr, size, trstr, c);
-	free(trstr);
-	if (!strarr)
+	if (!ft_fillsplit(strarr, size, trstr, c))
 		return (NULL);
+	free(trstr);
 	return (strarr);
 }
