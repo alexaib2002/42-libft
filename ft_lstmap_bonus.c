@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 19:12:54 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/09 11:18:14 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:27:39 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*map;
-	void	*fcon;
+	t_list	*t_node;
 
 	map = NULL;
 	while (lst)
 	{
-		fcon = f(lst->content);
-		if (!fcon)
+		t_node = ft_lstnew(f(lst->content));
+		if (!t_node)
 		{
-			ft_lstclear(&lst, del);
-			break ;
+			ft_lstclear(&map, del);
+			return (NULL);
 		}
 		if (!map)
-			map = ft_lstnew(fcon);
+			map = t_node;
 		else
-			ft_lstadd_back(&map, ft_lstnew(fcon));
+			ft_lstadd_back(&map, t_node);
 		lst = lst->next;
 	}
 	return (map);
