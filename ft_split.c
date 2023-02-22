@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:25:38 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/20 18:25:11 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/02/22 23:31:06 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,14 @@ char	**ft_split(const char *s, char c)
 	char	**strarr;
 	char	*trstr;
 	size_t	size;
+	char	*tmpc;
 
+	tmpc = ft_calloc(2, sizeof(char));
+	if (!tmpc)
+		return (NULL);
+	*tmpc = c;
 	trstr = ft_strtrim(s, &c);
+	free(tmpc);
 	if (!trstr)
 		return (NULL);
 	size = ft_splitn(trstr, c);
