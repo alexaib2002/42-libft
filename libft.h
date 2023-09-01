@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/09/01 13:16:16 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/09/01 22:19:20 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define LIBFT_H
 # include <stddef.h>
 # ifndef CAPS_PAD
-#  define CAPS_PAD 'a' - 'A'
+#  define CAPS_PAD 32
 # endif
 # ifndef NUMS_PAD
-#  define NUMS_PAD '0'
+#  define NUMS_PAD 48
 # endif
 
 /*******************
