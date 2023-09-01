@@ -6,7 +6,7 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/02/09 11:16:12 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/09/01 13:16:16 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,6 +190,15 @@ int		ft_atoi(const char *nptr);
  * point (can be an empty string).
  */
 char	*ft_itoa(int n);
+/**
+ * @brief Generates a string from a given unsigned integer. The resulting string
+ * is generated with malloc.
+ * @param n Given unsigned integer
+ * @return Resulting string, or NULL if malloc fails. If some error happens
+ * during conversion, the resulting string will be the number up until that
+ * point (can be an empty string).
+ */
+char	*ft_utoa(unsigned int n);
 /**
  * @brief Converts a valid lower-case letter referenced by the char to its
  * corresponding upper-case one.
@@ -482,6 +491,13 @@ size_t	ft_uclamp(size_t min, size_t max, size_t n);
  * @return Digits of 'n'.
  */
 int		ft_ndigs(int n);
+
+/**
+ * @brief Calculates the number of digits of a given unsigned number 'n'.
+ * @param n Unsigned number
+ * @return Digits of 'n'.
+ */
+size_t	ft_undigs(unsigned int n);
 
 /*****************
 * Array functions
