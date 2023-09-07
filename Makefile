@@ -54,7 +54,7 @@ clean:
 # Clean all
 fclean: clean
 	@echo "Cleaning all"
-	@rm -f $(NAME)
+	@rm -f $(OUT)/$(NAME)
 
 # Re-make all, same as calling clean && all
 re: fclean all
