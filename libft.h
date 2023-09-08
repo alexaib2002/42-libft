@@ -6,13 +6,14 @@
 /*   By: aaibar-h <aaibar-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:49:15 by aaibar-h          #+#    #+#             */
-/*   Updated: 2023/09/01 22:19:20 by aaibar-h         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:54:56 by aaibar-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
+# include <unistd.h>
 # ifndef CAPS_PAD
 #  define CAPS_PAD 32
 # endif
@@ -357,8 +358,9 @@ void	*ft_calloc(size_t count, size_t size);
  * @brief Sends the character 'c' into a file descriptor 'fd'.
  * @param c Character to send
  * @param fd File descriptor to be written
+ * @return Number of bytes written. -1 if an error occurs.
  */
-void	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putchar_fd(char c, int fd);
 /**
  * @brief Sends the string 's' into a file descriptor 'fd'.
  * @param s String to send
